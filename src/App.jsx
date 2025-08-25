@@ -1,10 +1,10 @@
-import { useState } from "react";
+import {useState} from "react";
 
 import Player from "./components/Player.jsx";
 import GameBoard from "./components/GameBoard.jsx";
 import Log from "./components/Log.jsx";
 import GameOver from "./components/GameOver.jsx";
-import { WINNING_COMBINATIONS } from './winning-combinations.js';
+import {WINNING_COMBINATIONS} from './winning-combinations.js';
 
 const PLAYERS = {
   X: 'Player 1',
@@ -71,9 +71,7 @@ function App() {
     setGameTurns((prevTurns) => {
       const currentPlayer = deriveActivePlayer(prevTurns);
 
-      const updatedTurns = [{ square: {row: rowIndex, col: colIndex}, player: currentPlayer }, ...prevTurns];
-
-      return updatedTurns;
+      return [{square: {row: rowIndex, col: colIndex}, player: currentPlayer}, ...prevTurns];
     });
   }
 
